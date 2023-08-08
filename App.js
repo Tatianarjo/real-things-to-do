@@ -1,5 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { KeyboardAvoidingView, Platform, StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import Task from './components/Task'
 import React from 'react';
 
@@ -17,6 +16,19 @@ export default function App() {
       </View>
 
      </View>
+
+     {/*Write a Task*/}
+     <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      style={styles.writeTaskWrapper}
+      >
+        <TextInput style={styles.input} placeholder={'I Get To...'} />
+        <TouchableOpacity>
+          <View style={styles.addWrapper}>
+            <Text style={styles.addText}>+</Text>
+          </View>
+        </TouchableOpacity>
+     </KeyboardAvoidingView>
     </View>
   );
 }
@@ -37,7 +49,36 @@ sectionTitle: {
 },
 items: {
   marginTop: 30
-}
+},
+writeTaskWrapper: {
+  position: "absolute",
+  bottom: 60,
+  width: "100%",
+  flexDirection: "row",
+  justifyContent: "space-around",
+  alignItems: "center"
+},
+addWrapper: {
+  width: 60,
+  height: 60,
+  backgroundColor:"#739237",
+  borderRadius: 60,
+  justifyContent: "center",
+  alignItems: "center",
+  borderWidth: 1
+
+},
+input: {
+  paddingVertical: 15,
+  paddingHorizontal: 15,
+  backgroundColor: "#fff",
+  borderRadius: 60,
+  borderColor:"#068da9",
+  borderWidth: 1,
+  width: 250,
+
+},
+addText: {}
 });
 
 //#ECF8F9
