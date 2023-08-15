@@ -1,6 +1,7 @@
-import { KeyboardAvoidingView, Platform, StyleSheet, Text, View, TextInput, TouchableOpacity, Keyboard } from 'react-native';
+import { KeyboardAvoidingView, Platform, StyleSheet, Text, View, TextInput, TouchableOpacity, Keyboard, Image } from 'react-native';
 import Task from './components/Task'
 import React, {useState} from 'react';
+import get2doImage from './components/Get2do.png'
 
 export default function App() {
   const [task, setTask] = useState();
@@ -19,11 +20,14 @@ export default function App() {
   }
 
   return (
+   
+
     <View style={styles.container}>
       
      {/*Today's Tasks*/}
      <View style={styles.tasksWrapper}>
-      <Text style={styles.sectionTitle}>Things I Get To Do</Text>
+     <Image source={require('./components/Get2do.png')} style={{ width: 200, height: 200 }} />
+    {/*<Text style={styles.sectionTitle}>Things I Get To Do</Text>*/}
 
       <View style={styles.items}>
         {/*This is where the tasks will go*/}
@@ -58,6 +62,7 @@ export default function App() {
      </KeyboardAvoidingView>
     </View>
   );
+ 
 }
 
 const styles = StyleSheet.create({
