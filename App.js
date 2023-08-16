@@ -55,6 +55,7 @@ export default function App() {
         <TextInput style={styles.input} placeholder={'I Get To...'} value={task}onChangeText={text=> setTask(text)}/>
         
         <TouchableOpacity onPress={() => handleAddTask()}>
+          
           <View style={styles.addWrapper}>
             <Text style={styles.addText}>+</Text>
           </View>
@@ -93,7 +94,7 @@ writeTaskWrapper: {
 addWrapper: {
   width: 60,
   height: 60,
-  backgroundColor:"#739237",
+  backgroundColor:"#FB2576",
   borderRadius: 60,
   justifyContent: "center",
   alignItems: "center",
